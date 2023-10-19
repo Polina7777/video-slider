@@ -1,0 +1,39 @@
+.carousel-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .carousel-item {
+    transform: scale(0.9); /* Масштабирование видео по умолчанию */
+    transition: transform 0.3s ease;
+    max-width: 310px;
+    width: 310px;
+  }
+  .slider-box{
+    width: 310px;
+  }
+  /* .slick-slide{
+    max-width: 310px;
+    width: 310px;
+  } */
+  .slick-center .carousel-item {
+    transform: scale(1.9); /* Масштабирование активного видео */
+    transform: rotate(0);
+  }
+  
+  /* .slick-active {
+    transform: rotate(-8deg); 
+  } */
+
+  .slick-center .slick-slide {
+    transform: rotate(0); /* Уберите вращение для активного видео */
+  }
+  .slick-arrow{
+    visibility: hidden;
+  }
+  /* .slick-active{
+    transform: scale(1);
+  } */
+ /* div.slick-slide.slick-active{
+  transform: rotate(-8deg)
+ } */

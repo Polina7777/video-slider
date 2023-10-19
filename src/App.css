@@ -101,9 +101,14 @@ ul{
   gap:11px;
   width: 100%;
 }
-ul,p,h3{
+ul,p,h3,a{
   padding: 0;
   margin: 0;
+  text-decoration: none
+
+}
+a{
+  color:aliceblue;
 }
 p{
   font-size: 12px;
@@ -229,6 +234,7 @@ nav.stroke ul li a:hover:after {
   width: 100%;
   padding: 20px 130px;
   overflow-y: scroll;
+  color: aliceblue;
 }
 .page-header__wrapper{
   display: flex;
@@ -264,9 +270,13 @@ ul.tag{
 p.seeAll{
   color: #f0f8ff;
 }
-.arrow-next{
+.arrow-next, .arrow-prev{
   width: 11px;
   height: 11px;
+}
+.arrow-next-slider, .arrow-prev-slider{
+  width: 21px;
+  height: 21px;
 }
 /*General*/
 
@@ -340,24 +350,56 @@ nav.tag-nav ul li a:hover:after {
   color: black;
   /* width: 121px;
   height:121px; */
-  width: 300px;
-  height:70%;
+  width: 350px;
+  height:80%;
   background-color: aqua;
   /* rotate: -8deg; */
 }
 .slider-wrapper{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 100px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
   background: rgb(255,146,0);
   background: linear-gradient(180deg, rgba(255,146,0,1) 37%, rgba(255,212,0,1) 100%);
+  color: #f0f8ff;
   width: 100%;
+  position: relative;
+}
+.slider-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  width: 100%;
+  height: 100%;
 }
 
 
-
+.slider-page_header__wrapper{
+justify-content: space-between;
+width: 100%;
+}
+button{
+  background-color: aliceblue;
+  color: #252424;
+  font-size: 14px;
+  padding: 10px 15px;
+  font-weight: 700;
+  border: transparent;
+  border-radius: 20px;
+}
+.arrows-buttons{
+  background-color: rgba(240, 248, 255, 0.431);
+  padding: 15px 10px;
+  border: transparent;
+  border-radius: 33px;
+  position: absolute;
+  left: 65%;
+  top:37%;
+  z-index: 1000;
+}
 /* .video-js, .react-player{
   background-color: #1c1b1b;
   width: 310px;
@@ -448,3 +490,45 @@ justify-content: center;
   height: 31px;
   padding: 0 3px;
 }
+
+
+.main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  height: 100vh;
+}
+
+
+
+/* 
+.video-section .item{
+  opacity:0.4;
+  transition:.4s ease all;
+  margin:0 20px;
+  transform:scale(.8);
+}
+
+@media(max-width:1000px){
+  .video-section .item{margin:0; transform:scale(.9)}
+}
+
+.video-section .active .item{
+  opacity:1;
+  transform:scale(1);
+} 
+
+/* body{
+  margin:80px 0 0 0;
+} */
+
+/* .video-section .owl-item {
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+}
+
+.video-section video{
+  max-width:100%;
+  height:auto;
+} */ 

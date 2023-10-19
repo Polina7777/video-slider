@@ -5,10 +5,26 @@ import coin from '../assets/image/coin.svg'
 import hat from '../assets/image/hat.svg'
 // import "node_modules/video-react/dist/video-react.css"; 
 import ReactPlayer from 'react-player/'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Routes,
+  useNavigate,
+  Link
+} from "react-router-dom";
 
 
-export default function defaultContentBox({item}) {
-    const arr= item.items
+
+ function ContentBox({item}) {
+    const arr= item.items;
+
+    const navigate = useNavigate();
+    const clickCard=(url)=>{
+      console.log('sdvdv')
+      navigate('/slider', { state: { active: url, videos: item } });
+    }
+
   return (
     <div className='content-box'>
         <div className='content-box__header'>
@@ -20,7 +36,7 @@ export default function defaultContentBox({item}) {
        </div>
        <div className='video-list__wrapper'>
        { item.items.map(item =>{      
-return      <div className='player-wrapper'>   <video
+return   <div className='player-wrapper' onClick={()=>clickCard(item.video)}>   <video
 id="my-video"
 className="video-js"
 // controls
@@ -51,6 +67,7 @@ data-setup="{}"
 {/* //  <div className='player-wrapper'> */}
       
      </div>
+    //  </Link>
 })}
 
      
@@ -66,3 +83,6 @@ poster={item.poster}
 // height='310px'
 loop
 /> */}
+//  <Link to={'/slider'}>
+
+export default ContentBox;
